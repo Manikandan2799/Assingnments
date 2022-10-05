@@ -1,0 +1,42 @@
+You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
+
+Example
+
+
+The maximum height candles are  units high. There are  of them, so return .
+/
+/
+/
+/
+/
+/
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if(n>=1&&n<=100000)
+        {
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=in.nextInt();
+        }
+        int max = 0;
+        int sum = 0;
+        for(int i=0;i<n;i++)
+        if(arr[i]>=1&&arr[i]<=10000000)
+        {     
+    
+            if(arr[i] > max){
+                sum = 1;
+                max = arr[i];
+            }else if(arr[i] == max){
+                sum++;
+            }
+        }
+        
+        System.out.println(sum);
+        }
+    }
+}
