@@ -1,0 +1,48 @@
+Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Example
+
+
+Return '12:01:00'.
+
+
+Return '00:01:00'.
+/
+/
+/
+/
+/
+/
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if(n>=1&&n<=100000)
+        {
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=in.nextInt();
+        }
+        int max = 0;
+        int sum = 0;
+        for(int i=0;i<n;i++)
+        if(arr[i]>=1&&arr[i]<=10000000)
+        {     
+    
+            if(arr[i] > max){
+                sum = 1;
+                max = arr[i];
+            }else if(arr[i] == max){
+                sum++;
+            }
+        }
+        
+        System.out.println(sum);
+        }
+    }
+}
